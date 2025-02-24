@@ -29,10 +29,10 @@ String ssid = "miniMachine"; // Defina o nome da rede aqui
 
 | Pino ESP32 | Nome da Variável | Função                           | Descrição                      |
 |------------|-----------------|----------------------------------|--------------------------------|
-| `5`        | `DIR_A`         | Controle de direção do Motor A  | Define o sentido do motor A   |
-| `18`       | `DIR_B`         | Controle de direção do Motor B  | Define o sentido do motor B   |
-| `19`       | `TA`            | Controle de velocidade do Motor A | Controla a intensidade do motor A |
-| `21`       | `TB`            | Controle de velocidade do Motor B | Controla a intensidade do motor B |
+| `5`        | `IN1`         | Controle de direção do Motor A  | Define o sentido do motor A   |
+| `18`       | `IN2`         | Controle de direção do Motor B  | Define o sentido do motor B   |
+| `19`       | `IN3`            | Controle de velocidade do Motor A | Controla a intensidade do motor A |
+| `21`       | `IN4`            | Controle de velocidade do Motor B | Controla a intensidade do motor B |
 
 ## 🎮 Comandos Disponíveis  
 
