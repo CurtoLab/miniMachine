@@ -25,6 +25,14 @@ Para modificar o **SSID**, edite a seguinte linha no `setup()`:
 ```cpp
 String ssid = "miniMachine"; // Defina o nome da rede aqui
 ```
+## ⚙️ Esquema de Ligações  
+
+| Pino ESP32 | Nome da Variável | Função                           | Descrição                      |
+|------------|-----------------|----------------------------------|--------------------------------|
+| `5`        | `DIR_A`         | Controle de direção do Motor A  | Define o sentido do motor A   |
+| `18`       | `DIR_B`         | Controle de direção do Motor B  | Define o sentido do motor B   |
+| `19`       | `TA`            | Controle de velocidade do Motor A | Controla a intensidade do motor A |
+| `21`       | `TB`            | Controle de velocidade do Motor B | Controla a intensidade do motor B |
 
 ## 🎮 Comandos Disponíveis  
 
@@ -45,7 +53,6 @@ String ssid = "miniMachine"; // Defina o nome da rede aqui
 | Componente | Descrição |
 |------------|-------------|
 | **Definição dos Pinos** | Pinos configurados para controle da direção e velocidade dos motores. |
-| **Geração do SSID** | O nome da rede Wi-Fi inclui o Chip ID (`ESP32_ROBOT_<CHIP_ID>`). |
 | **Funções de Movimento** | Cada função ativa ou desativa os pinos corretos para realizar o movimento desejado. |
 | **Servidor Web** | O servidor recebe requisições HTTP e interpreta o valor do parâmetro `State`. |
 | **Loop Principal** | O servidor monitora constantemente novos comandos e executa as ações do robô. |
@@ -54,8 +61,8 @@ String ssid = "miniMachine"; // Defina o nome da rede aqui
 
 | Passo | Ação |
 |-------|---------------------------|
-| **1** | Ligue o ESP32 e conecte-se à rede Wi-Fi **"ESP32_ROBOT_<CHIP_ID>"**. |
-| **2** | Acesse o IP **`192.168.4.1`** no navegador. |
+| **1** | Ligue o ESP32 e conecte-se à rede Wi-Fi . |
+| **2** | Acesse o IP **`192.168.4.1`**. |
 | **3** | Envie comandos via requisição HTTP para controlar o robô. |
 
 🔧 **Dica:** Esse código pode ser expandido para incluir sensores ou controle remoto via aplicativo. 🚀
