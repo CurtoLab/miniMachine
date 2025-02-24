@@ -96,18 +96,18 @@ void Stop() // Função de controle do robô parar
 
 void setup()
 {
-  Serial.begin(115200);                                  // Inicializa a comunicação serial
-  uint32_t chipId = (uint32_t)(ESP.getEfuseMac() >> 24); // Pega o ID do chip
-  Serial.printf("Chip ID: %08X\n", chipId);              // Mostra o ID do chip
-  String ssid = "mini_Machine" + String(chipId, HEX);    // Cria um SSID único
-  pinMode(DIR_A, OUTPUT);                                // Define os pinos como saída
-  pinMode(DIR_B, OUTPUT);                                // Define os pinos como saída
-  pinMode(TA, OUTPUT);                                   // Define os pinos como saída
-  pinMode(TB, OUTPUT);                                   // Define os pinos como saída
-  digitalWrite(DIR_A, LOW);                              // Inicializa os pinos em nível baixo
-  digitalWrite(DIR_B, LOW);                              // Inicializa os pinos em nível baixo
-  digitalWrite(TA, LOW);                                 // Inicializa os pinos em nível baixo
-  digitalWrite(TB, LOW);                                 // Inicializa os pinos em nível baixo
+  Serial.begin(115200); // Inicializa a comunicação serial
+  //** Definição do nome da rede **//
+  String ssid = "miniMachine";
+
+  pinMode(DIR_A, OUTPUT);   // Define os pinos como saída
+  pinMode(DIR_B, OUTPUT);   // Define os pinos como saída
+  pinMode(TA, OUTPUT);      // Define os pinos como saída
+  pinMode(TB, OUTPUT);      // Define os pinos como saída
+  digitalWrite(DIR_A, LOW); // Inicializa os pinos em nível baixo
+  digitalWrite(DIR_B, LOW); // Inicializa os pinos em nível baixo
+  digitalWrite(TA, LOW);    // Inicializa os pinos em nível baixo
+  digitalWrite(TB, LOW);    // Inicializa os pinos em nível baixo
 
   Serial.println("Conectando ao WiFi..."); // Mensagem de conexão
   WiFi.mode(WIFI_AP);                      // Modo de conexão

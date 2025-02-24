@@ -1,23 +1,29 @@
-# 🚀 Controle de Robô com ESP32 via Wi-Fi  
+# 🤖 Controle de Robô com ESP32 via Wi-Fi  
 
-Este projeto utiliza um **ESP32** configurado como **Access Point (AP)** para receber comandos via **servidor HTTP** e controlar um robô. A comunicação ocorre através de requisições HTTP contendo comandos que definem o movimento do robô.  
+Este projeto permite controlar um **robô motorizado** utilizando um **ESP32** configurado como **Access Point (AP)**. O ESP32 cria uma rede Wi-Fi própria, permitindo que um usuário envie **comandos HTTP** para movimentar o robô em diferentes direções.  
 
-## 📌 Como Funciona  
+## 📌 Funcionalidades  
+
+- ✅ Criar um **Access Point (AP)** com um nome de rede definido pelo usuário.  
+- ✅ Iniciar um **servidor HTTP** para receber comandos de movimento.  
+- ✅ Controlar o **direcionamento dos motores** do robô.  
+- ✅ Permitir movimentação em **8 direções** diferentes + parada.  
+
+## 🚀 Como Funciona  
 
 | Etapa | Descrição |
 |-------|-----------|
-| **1. Configuração da Rede Wi-Fi** | O ESP32 é configurado como Access Point (AP) com um **SSID único** baseado no Chip ID. |
-| **2. Servidor Web** | Um servidor HTTP é iniciado na porta **80** para receber comandos. |
-| **3. Comandos de Movimento** | O ESP32 interpreta o parâmetro `State` da requisição HTTP e executa a ação correspondente. |
+| **1. Configuração da Rede Wi-Fi** | O ESP32 cria um **Access Point** (AP) com um **SSID definido pelo usuário**. |
+| **2. Servidor Web** | O ESP32 inicia um **servidor HTTP** na porta **80** para receber comandos de movimento. |
+| **3. Comandos de Movimento** | O ESP32 interpreta o parâmetro `State` enviado pela requisição HTTP e executa a ação correspondente. |
 
-## 📡 Nome da Rede (SSID)  
+## ⚠️ **Atenção: Personalize o Nome da Rede (SSID)**  
 
-O nome da rede agora inclui o **Chip ID do ESP32**, tornando cada AP único.  
-O formato do SSID gerado será:
+O **nome da rede Wi-Fi** precisa ser **definido manualmente** no código.  
+Para modificar o **SSID**, edite a seguinte linha no `setup()`:
 
-Por exemplo, se o **Chip ID** for `126F2812`, o **SSID** da rede Wi-Fi será:
-
-Isso garante que múltiplos ESP32 não entrem em conflito na mesma rede.
+```cpp
+String ssid = "miniMachine"; // Defina o nome da rede aqui
 
 ## 🎮 Comandos Disponíveis  
 
