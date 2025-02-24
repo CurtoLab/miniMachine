@@ -24,7 +24,7 @@ Para modificar o **SSID**, edite a seguinte linha no `setup()`:
 
 ```cpp
 String ssid = "miniMachine"; // Defina o nome da rede aqui
-```cpp
+```
 
 ## 🎮 Comandos Disponíveis  
 
