@@ -2,10 +2,10 @@
 #include <WebServer.h>
 
 // Definições dos pinos do ESP32
-int DIR_A = 5;  // Pino de controle do motor A
-int DIR_B = 18; // Pino de controle do motor B
-int TA = 19;    // Pino de controle da velocidade do motor A
-int TB = 21;    // Pino de controle da velocidade do motor B
+int IN1 = 5;  // Pino de controle do motor A
+int IN2 = 18; // Pino de controle do motor B
+int IN3 = 19; // Pino de controle da velocidade do motor A
+int IN4 = 21; // Pino de controle da velocidade do motor B
 
 String command;
 
@@ -22,76 +22,76 @@ void HTTP_handleRoot() // Função de controle
 
 void Forward() // Função de controle do robô para frente
 {
-  digitalWrite(DIR_A, HIGH);
-  digitalWrite(DIR_B, LOW);
-  digitalWrite(TA, LOW);
-  digitalWrite(TB, HIGH);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
 }
 
 void Backward() // Função de controle do robô para trás
 
 {
-  digitalWrite(DIR_A, LOW);
-  digitalWrite(DIR_B, HIGH);
-  digitalWrite(TA, HIGH);
-  digitalWrite(TB, LOW);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
 }
 
 void TurnRight() // Função de controle do robô para direita
 
 {
-  digitalWrite(DIR_A, HIGH);
-  digitalWrite(DIR_B, LOW);
-  digitalWrite(TA, HIGH);
-  digitalWrite(TB, LOW);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
 }
 
 void TurnLeft() // Função de controle do robô para esquerda
 {
-  digitalWrite(DIR_A, LOW);
-  digitalWrite(DIR_B, HIGH);
-  digitalWrite(TA, LOW);
-  digitalWrite(TB, HIGH);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
 }
 
 void ForwardLeft() // Função de controle do robô para frente e esquerda
 {
-  digitalWrite(DIR_A, LOW);
-  digitalWrite(DIR_B, LOW);
-  digitalWrite(TA, LOW);
-  digitalWrite(TB, HIGH);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
 }
 
 void ForwardRight() // Função de controle do robô para frente e direita
 {
-  digitalWrite(DIR_A, HIGH);
-  digitalWrite(DIR_B, LOW);
-  digitalWrite(TA, LOW);
-  digitalWrite(TB, LOW);
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
 }
 
 void BackwardLeft() // Função de controle do robô para trás e esquerda
 {
-  digitalWrite(DIR_A, LOW);
-  digitalWrite(DIR_B, HIGH);
-  digitalWrite(TA, LOW);
-  digitalWrite(TB, LOW);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
 }
 
 void BackwardRight() // Função de controle do robô para trás e direita
 {
-  digitalWrite(DIR_A, LOW);
-  digitalWrite(DIR_B, LOW);
-  digitalWrite(TA, HIGH);
-  digitalWrite(TB, LOW);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
 }
 
 void Stop() // Função de controle do robô parar
 {
-  digitalWrite(DIR_A, LOW);
-  digitalWrite(DIR_B, LOW);
-  digitalWrite(TA, LOW);
-  digitalWrite(TB, LOW);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, LOW);
 }
 
 void setup()
@@ -100,14 +100,14 @@ void setup()
   //** Definição do nome da rede **//
   String ssid = "miniMachine";
 
-  pinMode(DIR_A, OUTPUT);   // Define os pinos como saída
-  pinMode(DIR_B, OUTPUT);   // Define os pinos como saída
-  pinMode(TA, OUTPUT);      // Define os pinos como saída
-  pinMode(TB, OUTPUT);      // Define os pinos como saída
-  digitalWrite(DIR_A, LOW); // Inicializa os pinos em nível baixo
-  digitalWrite(DIR_B, LOW); // Inicializa os pinos em nível baixo
-  digitalWrite(TA, LOW);    // Inicializa os pinos em nível baixo
-  digitalWrite(TB, LOW);    // Inicializa os pinos em nível baixo
+  pinMode(IN1, OUTPUT);   // Define os pinos como saída
+  pinMode(IN2, OUTPUT);   // Define os pinos como saída
+  pinMode(IN3, OUTPUT);   // Define os pinos como saída
+  pinMode(IN4, OUTPUT);   // Define os pinos como saída
+  digitalWrite(IN1, LOW); // Inicializa os pinos em nível baixo
+  digitalWrite(IN2, LOW); // Inicializa os pinos em nível baixo
+  digitalWrite(IN3, LOW); // Inicializa os pinos em nível baixo
+  digitalWrite(IN4, LOW); // Inicializa os pinos em nível baixo
 
   Serial.println("Conectando ao WiFi..."); // Mensagem de conexão
   WiFi.mode(WIFI_AP);                      // Modo de conexão
