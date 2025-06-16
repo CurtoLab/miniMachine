@@ -6,7 +6,7 @@ int in1 = 22;
 int in2 = 23;
 int in3 = 12;
 int in4 = 13;
-String bleServerName = "MiniMachine_01";
+const char* bleServerName = "MiniMachine_01";
 
 void Forward()
 {
