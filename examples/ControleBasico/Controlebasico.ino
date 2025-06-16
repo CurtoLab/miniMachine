@@ -6,6 +6,7 @@ int in1 = 22;
 int in2 = 23;
 int in3 = 12;
 int in4 = 13;
+String bleServerName = "MiniMachine_01";
 
 void Forward()
 {
@@ -101,8 +102,7 @@ void setup()
   pinMode(in3, OUTPUT);
   pinMode(in4, OUTPUT);
   Stop();
-  miniMachineBLE_begin("MiniMachine_01", handleDir);
-  
+  miniMachineBLE_begin(bleServerName, handleDir);
 }
 
 void loop()
