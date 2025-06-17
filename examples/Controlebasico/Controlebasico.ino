@@ -6,7 +6,6 @@ int in1 = 22;
 int in2 = 23;
 int in3 = 12;
 int in4 = 13;
-const char* bleServerName = "MiniMachine_01";
 
 void Forward()
 {
@@ -102,7 +101,7 @@ void setup()
   pinMode(in3, OUTPUT);
   pinMode(in4, OUTPUT);
   Stop();
-  miniMachineBLE_begin(bleServerName, handleDir);
+  miniMachineBLE_begin("Mini_08", handleDir);
 }
 
 void loop()
